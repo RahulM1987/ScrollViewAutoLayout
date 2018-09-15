@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollVewAutolayout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qip-QC-9A7">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IE5-X4-8p4" userLabel="ContentView">
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UQd-Fa-NNk">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="k9s-ZL-3NJ"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1V-Nc-E4L">
+                                                <state key="normal" title="Update Frame"/>
+                                                <connections>
+                                                    <action selector="upDateFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTG-8r-Whh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.80816426699999999" green="0.80816426699999999" blue="0.80816426699999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="UQd-Fa-NNk" firstAttribute="top" secondItem="IE5-X4-8p4" secondAttribute="top" constant="842" id="AX6-gs-pFS"/>
+                                            <constraint firstItem="Q1V-Nc-E4L" firstAttribute="leading" secondItem="UQd-Fa-NNk" secondAttribute="leading" constant="130" id="HBL-q0-pVi"/>
+                                            <constraint firstItem="UQd-Fa-NNk" firstAttribute="top" secondItem="Q1V-Nc-E4L" secondAttribute="bottom" constant="8" id="O8u-CF-Ule"/>
+                                            <constraint firstAttribute="bottom" secondItem="UQd-Fa-NNk" secondAttribute="bottom" constant="8" id="Rn9-rY-Ggf"/>
+                                            <constraint firstAttribute="trailing" secondItem="UQd-Fa-NNk" secondAttribute="trailing" constant="8" id="gP6-Pf-9ee"/>
+                                            <constraint firstItem="Q1V-Nc-E4L" firstAttribute="trailing" secondItem="UQd-Fa-NNk" secondAttribute="trailing" constant="-131" id="hVl-2T-aRd"/>
+                                            <constraint firstItem="UQd-Fa-NNk" firstAttribute="leading" secondItem="IE5-X4-8p4" secondAttribute="leadingMargin" id="lRI-n0-VbN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IE5-X4-8p4" firstAttribute="top" secondItem="Qip-QC-9A7" secondAttribute="top" id="GHZ-0d-X9N"/>
+                                    <constraint firstAttribute="trailing" secondItem="IE5-X4-8p4" secondAttribute="trailing" id="ZYB-XU-4en"/>
+                                    <constraint firstItem="IE5-X4-8p4" firstAttribute="height" secondItem="Qip-QC-9A7" secondAttribute="height" priority="250" id="f1Q-Kd-zne"/>
+                                    <constraint firstItem="IE5-X4-8p4" firstAttribute="leading" secondItem="Qip-QC-9A7" secondAttribute="leading" id="fGY-2a-FG0"/>
+                                    <constraint firstItem="IE5-X4-8p4" firstAttribute="width" secondItem="Qip-QC-9A7" secondAttribute="width" id="hJq-TW-XCc"/>
+                                    <constraint firstAttribute="bottom" secondItem="IE5-X4-8p4" secondAttribute="bottom" id="spS-dh-tzJ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qip-QC-9A7" secondAttribute="trailing" id="8Yt-2e-cCM"/>
+                            <constraint firstItem="Qip-QC-9A7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NXn-wb-Xmo"/>
+                            <constraint firstItem="Qip-QC-9A7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pMe-0c-sj5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qip-QC-9A7" secondAttribute="bottom" id="x9Q-eU-cXh"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1100"/>
+                    <connections>
+                        <outlet property="txtView" destination="UQd-Fa-NNk" id="AC5-P8-Dwc"/>
+                        <outlet property="txtViewHeight" destination="k9s-ZL-3NJ" id="gZe-Kj-Xa5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.53073463268368"/>
         </scene>
     </scenes>
 </document>
